@@ -47,7 +47,8 @@ for N1 in range(-16, 16):
             if N2<0 and op>=3: continue
             gen_test(N1, N2, op)
     print(N1)
-
+print(len(tests))
+sleep(0.5)
 
 n_low, n_high = -32768, 32767
 for step in range(5000):
@@ -92,6 +93,8 @@ for _ in range(22):
     print(o)
 
 step = 1
+print(len(tests))
+sleep(0.4)
 tests = tests[0:-500]
 for test in tests:
     (prob, ans) = test
