@@ -34,7 +34,7 @@ And execute this code.
 ## Details
 This code will test your code with 8596 test cases consist of:
 
-- All cases for numbers in [-16, 15] (4096 test cases)
+- All cases for numbers in [-16, 15] (32*32*3 + 32*16*2 = 4096 test cases, since / and % doesn't have negative divisor.)
 - Random cases(5000 test cases)
 - Delete some of the cases to make output stable(delete 500 cases)
 
