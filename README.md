@@ -50,3 +50,7 @@ If the program has incorrect answer you'll see the output like:
 	3*5=13
 
 It means that your program gave a incorrect answer 13 for the test case 3*5, which the correct answer is 15.
+
+## Reminder
+
+Don't forget to copy your asm file to your home directory.
