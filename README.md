@@ -19,7 +19,7 @@ First change your directory to ~/lc3.
 	
 And copy this project with command below.
 
-	std00000@ccp0:~/lc3$ c
+	std00000@ccp0:~/lc3$ git clone https://github.com/GGOSinon/lc3_calculator_checker.git
 
 Copy the python file in the lc3 folder.
 
