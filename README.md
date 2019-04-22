@@ -42,6 +42,8 @@ If the program has correct answer you'll see the output like:
 
 	Case 50 : YES 12+5=17
 
+It means that your program gave a correct answer 17 for the test case 12+5.
+
 If the program has incorrect answer you'll see the output like:
 
 	NO answer is 15
