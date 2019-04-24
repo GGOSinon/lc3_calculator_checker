@@ -103,11 +103,12 @@ sleep(0.4)
 tests = tests[0:8500]
 for test in tests:
     (prob, ans) = test
-    o = proc.stdout.readline()
-    #print(o)
-    #break
-    o.replace(")", " ")
-    res = o.split()[-1]
+    res = '>'
+    while res.startswith('>'):
+        o = proc.stdout.readline()
+        #print(o)
+        o.replace(")", " ")
+        res = o.split()[-1]
     if str(ans) == res:
         print("Case", step, ": YES " + prob + "=" + str(res))
         pass
