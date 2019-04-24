@@ -2,7 +2,9 @@ import subprocess
 from time import sleep
 import sys
 import random
+
 subprocess.run(["killall", "-9", "./lc3sim"])
+
 proc = subprocess.Popen("./lc3sim calc.obj",stdin=subprocess.PIPE, shell=True, universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
 sleep(0.5)
@@ -51,14 +53,14 @@ for N1 in range(-16, 16):
 print(len(tests))
 sleep(0.5)
 
-n_low, n_high = -32768, 32767
+n_low, n_high = -32767, 32767
 for step in range(5000):
     op = random.randrange(0, 5)
     N1 = random.randrange(n_low, n_high)
     if op == 0:
-        N2 = random.randrange(n_low - N1, n_high - N1)
+        N2 = random.randrange(max(n_low, n_low - N1), min(n_high, n_high - N1))
     if op == 1:
-        N2 = random.randrange(N1 - n_high, N1 - n_low)
+        N2 = random.randrange(max(n_low, N1 - n_high), min(n_high, N1 - n_low))
     if op == 2:
         if N1 > 0: N2 = random.randrange(n_low//N1 + 1, n_high//N1)
         if N1 == 0: N2 = random.randrange(n_low, n_high)
@@ -82,11 +84,13 @@ test_str += "e"
 proc.stdin.write(test_str)
 proc.stdin.flush()
 
+'''
 for test in tests[0:5]:
     (prob, ans) = test
     proc.stdin.write(prob+"\n")
     proc.stdin.flush()
     sleep(0.05)
+'''
 
 for _ in range(22):
     o = proc.stdout.readline()
@@ -96,10 +100,13 @@ for _ in range(22):
 step = 1
 print(len(tests))
 sleep(0.4)
-tests = tests[0:-500]
+tests = tests[0:8500]
 for test in tests:
     (prob, ans) = test
     o = proc.stdout.readline()
+    #print(o)
+    #break
+    o.replace(")", " ")
     res = o.split()[-1]
     if str(ans) == res:
         print("Case", step, ": YES " + prob + "=" + str(res))
@@ -107,7 +114,7 @@ for test in tests:
     else:
         print("NO answer is "+str(ans))
         print(prob + "=" + str(res))
-        break
+        #break
     #if step % 10 == 0: print(step,"/",len(tests), "complete")
     step += 1
 
