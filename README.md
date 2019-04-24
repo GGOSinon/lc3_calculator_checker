@@ -13,7 +13,7 @@ Python code which checks your calculator project.
 
 To use this project, you must have your obj file(calc.obj) in your lc3 folder.
 
-First change your directory to ~/lc3.
+First change your directory to ~/lc3.(/lc3 is the directory which contains files like ./lc3sim, if you have these files in other directory, please substitute 'lc3' to the name of that directory.)
 	
 	std00000@ccp0:~$ cd lc3
 	
