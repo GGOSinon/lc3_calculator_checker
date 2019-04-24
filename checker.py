@@ -2,6 +2,7 @@ import subprocess
 from time import sleep
 import sys
 import random
+subprocess.run(["killall", "-9", "./lc3sim"])
 proc = subprocess.Popen("./lc3sim calc.obj",stdin=subprocess.PIPE, shell=True, universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
 sleep(0.5)
@@ -110,6 +111,7 @@ for test in tests:
     #if step % 10 == 0: print(step,"/",len(tests), "complete")
     step += 1
 
+subprocess.run(["killall", "-9", "./lc3sim"])
 '''
     res = proc.stdout.readline()
     if ans == int(res): print("YES!")
