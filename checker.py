@@ -114,7 +114,7 @@ for test in tests:
     else:
         print("NO answer is "+str(ans))
         print(prob + "=" + str(res))
-        #break
+        break
     #if step % 10 == 0: print(step,"/",len(tests), "complete")
     step += 1
 
