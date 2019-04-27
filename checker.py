@@ -14,7 +14,7 @@ proc.stdin.flush()
 sleep(0.5)
 
 tests = []
-#tests = [("3*5", 15), ("3/5", 0), ("3%5", 3), ("3+5", 8), ("3/0", "ERROR")]
+hand_tests = [("32*-1024", -32768), ("-32*1024, -32768), ("-10000-22768", -32768), ("-10000+-22768", -32768)]
 
 def div(N1, N2):
     res = N1//N2
@@ -74,6 +74,7 @@ for step in range(5000):
         print(step)
 
 random.shuffle(tests)
+tests = hand_tests + tests
 #print(tests)
 test_str = ""
 for test in tests:
