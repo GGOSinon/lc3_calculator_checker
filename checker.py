@@ -58,17 +58,17 @@ for step in range(5000):
     op = random.randrange(0, 5)
     N1 = random.randrange(n_low, n_high)
     if op == 0:
-        N2 = random.randrange(max(n_low, n_low - N1), min(n_high, n_high - N1))
+        N2 = random.randrange(max(n_low, n_low - N1), min(n_high, n_high - N1)+1)
     if op == 1:
-        N2 = random.randrange(max(n_low, N1 - n_high), min(n_high, N1 - n_low))
+        N2 = random.randrange(max(n_low, N1 - n_high), min(n_high, N1 - n_low)+1)
     if op == 2:
-        if N1 > 0: N2 = random.randrange(n_low//N1 + 1, n_high//N1)
-        if N1 == 0: N2 = random.randrange(n_low, n_high)
-        if N1 < 0: N2 = random.randrange(n_high//N1 + 1, n_low//N1)
+        if N1 > 0: N2 = random.randrange(n_low//N1 + 1, (n_high//N1)+1)
+        if N1 == 0: N2 = random.randrange(n_low, (n_high)+1)
+        if N1 < 0: N2 = random.randrange(n_high//N1 + 1, (n_low//N1)+1)
     if op == 3:
-        N2 = random.randrange(0, n_high)
+        N2 = random.randrange(0, (n_high)+1)
     if op == 4:
-        N2 = random.randrange(0, n_high)
+        N2 = random.randrange(0, (n_high)+1)
     gen_test(N1, N2, op)
     if step % 100 == 0:
         print(step)
