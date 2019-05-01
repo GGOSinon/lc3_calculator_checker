@@ -9,7 +9,7 @@ proc = subprocess.Popen("./lc3sim calc.obj",stdin=subprocess.PIPE, shell=True, u
 
 sleep(0.5)
 
-proc.stdin.write("finish\n")
+proc.stdin.write("c\n")
 proc.stdin.flush()
 sleep(0.5)
 
